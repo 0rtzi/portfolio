@@ -34,6 +34,10 @@
     --lavender: #b7bdf8;
 }
 
+p {
+    color: var(--text-color);
+}
+
 .darkmode {
     --base-color: hsl(232deg, 23%, 18%);
     --primary-color: hsl(from var(--base-color) h s calc(l + 10));
@@ -45,24 +49,13 @@
     --secondary-text: #b8c0e0;
 }
 
-/* .glass-effect {
-    background: radial-gradient(circle at 50% 100%, var(--base-darker), transparent);
-    background-color: hsl(0 0% 100% / 0);
-    border-radius: 100px;
-    border: 3px black solid;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    background-image: url("data:image/svg+xml,%3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.74' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-} */
-
- .glass-effect {
+.glass-effect {
     background: rgba(255, 255, 255, 0.20);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: solid 2px var(--mauve);
- }
+}
 
 html {
     display: flex;
@@ -71,8 +64,8 @@ html {
 
 body {
     background-color: var(--base-color);
-    max-width: 50%;
-    min-width: 90wv;
+    max-width: 90wv;
+    min-width: 50%;
     font-family: 'JetBrains Mono', Arial, Helvetica, sans-serif;
 }
 
@@ -82,6 +75,7 @@ header {
     display: flex;
     margin-top: 20px;
     gap: 20px;
+    justify-content: center;
 }
 
 header ul {
@@ -110,6 +104,7 @@ header ul li a:hover {
     box-shadow: rgb(255, 255, 255) 0px 0px 5px 2px inset;
     border: 2px solid rgb(255, 255, 255);
     transition: all 0.2s ease-in-out;
+    color: black;
 }
 
 header ul li a:active {
@@ -117,4 +112,43 @@ header ul li a:active {
     box-shadow: black 0px 0px 5px 2px inset;
     border: 2px solid black;
     transition: all 0.2s ease-in-out;
+    color: white;
+}
+
+#about {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(to right, var(--sky), var(--blue), var(--mauve));
+    color: transparent;
+    background-clip: text;
+}
+
+.undername {
+    display:flex;
+    gap: 30px;
+    font-size: 2rem;
+    align-items: end;
+}
+
+.changing-adjective {
+    font-weight: bold;
+    font-size: 2.5rem;
+    background-image: linear-gradient(to right, var(--red), var(--yellow), var(--peach));
+    color: transparent;
+    background-clip: text;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
 }
