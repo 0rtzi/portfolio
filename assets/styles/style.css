@@ -8,7 +8,7 @@
  /*COLOR PALETTE*/
 :root {
     /*Changing colors*/
-    --base-color: hsl(220deg, 23%, 95%);
+    --base-color: hsl(232deg, 23%, 18%);
     --primary-color: hsl(from var(--base-color) h s calc(l + 10));
     --secondary-color: hsl(from var(--base-color) h s calc(l + 20));
     --base-darker: hsl(from var(--base-color) h s calc(l - 5));
@@ -34,10 +34,7 @@
     --lavender: #b7bdf8;
 }
 
-p {
-    color: var(--text-color);
-}
-
+/*GENERAL CLASSES*/
 .darkmode {
     --base-color: hsl(232deg, 23%, 18%);
     --primary-color: hsl(from var(--base-color) h s calc(l + 10));
@@ -47,14 +44,6 @@ p {
 
     --text-color: #cad3f5;
     --secondary-text: #b8c0e0;
-}
-
-.glass-effect {
-    background: rgba(255, 255, 255, 0.20);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: solid 2px var(--mauve);
 }
 
 html {
@@ -69,87 +58,45 @@ body {
     font-family: 'JetBrains Mono', Arial, Helvetica, sans-serif;
 }
 
-header {
-    position:sticky;
-    top: 20px;
-    user-select: none;
-    width: inherit;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+.cursor {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
 }
 
-header ul {
-    display: flex;
-    gap: 10px;
-    text-decoration: none;
-    list-style: none;
-    padding: 15px 7px;
-    border-radius: 100px;
+.hoveredCursor {
+  transform: translate(-50%, -50%) scale(2);
 }
 
-header ul li {
+
+.cube  {
+  width: 30em;
+  height: 50em;
+  background: red;
+  margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.text-container {
     position: relative;
-}
-header ul li a {
-    text-decoration: none;
-    position: relative;
-    color: var(--text-color);
-    padding: 8px 15px;
-    border: 2px solid transparent;
-    border-radius: 100px;
-}
-
-header ul li a:hover {
-    background: rgb(146, 146, 146);
-    box-shadow: rgb(255, 255, 255) 0px 0px 5px 2px inset;
-    border: 2px solid rgb(255, 255, 255);
-    transition: all 0.2s ease-in-out;
-    color: black;
-}
-
-header ul li a:active {
-    background: rgb(70, 70, 70);
-    box-shadow: black 0px 0px 5px 2px inset;
-    border: 2px solid black;
-    transition: all 0.2s ease-in-out;
-    color: white;
-}
-
-#about {
-    margin-top: 200px;
-    margin-bottom: 200px;
-    display: flex;
-    gap: 200px;
-    justify-content: center;
-    align-items: center;
-}
-
-.name {
-    font-size: 4rem;
+    font-size: 3em;
     font-weight: bold;
-    background-image: linear-gradient(to right, var(--sky), var(--blue), var(--mauve));
-    color: transparent;
-    background-clip: text;
+    color: #555; /* Color del texto original */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
 }
 
-.undername {
-    display:flex;
-    gap: 30px;
-    font-size: 2rem;
-    align-items: end;
-}
-
-.changing-adjective {
-    font-weight: bold;
-    font-size: 2.5rem;
-    background-image: linear-gradient(to right, var(--red), var(--yellow), var(--peach));
-    color: transparent;
-    background-clip: text;
-}
-
-.profile-picture {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
+.text-container span {
+    position: absolute; /* Para superponer ambos spans */
+    top: 0;
+    left: 0;
 }
