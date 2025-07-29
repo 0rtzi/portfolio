@@ -6,32 +6,51 @@
     <title>Unai Dorado</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <script src="https://kit.fontawesome.com/ed40f16fe7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <section>
-        <h1>EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+        <div class="text">
+            <h1>EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+        </div>
+        
         <span class="hover-btn">
+            <i data-lucide="arrow-right"></i>
+            <i data-lucide="arrow-right"></i>
+            <i data-lucide="arrow-right"></i>
+            <i data-lucide="arrow-right"></i>
+
+            <!-- <i class="fa-solid fa-arrow-right"></i>
             <i class="fa-solid fa-arrow-right"></i>
             <i class="fa-solid fa-arrow-right"></i>
-            <i class="fa-solid fa-arrow-right"></i>
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i> -->
         </span>
     </section>
     <section class="overlay">
-        <h1>EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+        <div class="text">
+            <h1>EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+        </div>
         <span class="hover-btn2">
+
+            <i data-lucide="arrow-right"></i>
+            <i data-lucide="arrow-right"></i>
+            <i data-lucide="arrow-right"></i>
+            <i data-lucide="arrow-right"></i>
+            
+            <!-- <i class="fa-solid fa-arrow-right"></i>
             <i class="fa-solid fa-arrow-right"></i>
             <i class="fa-solid fa-arrow-right"></i>
-            <i class="fa-solid fa-arrow-right"></i>
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i> -->
         </span>
     </section>
 
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
-        const span = document.querySelector('.hover-btn2');
+        const span = document.querySelectorAll('span');
         const overlay = document.querySelector('.overlay');
+        const h1 = document.querySelectorAll('.text');
+        lucide.createIcons();
 
         window.addEventListener('mousemove', (e) => {
             const x = Math.round((e.clientX / window.innerWidth) * 100);
@@ -40,13 +59,45 @@
             gsap.to(overlay, {
                 '--x': `${x}%`,
                 '--y': `${y}%`,
-                duration: 0.3,
-                ease: 'sine.out'
+                duration: 2,
+                ease: 'elastic.out'
             })
         });
 
-        span.addEventListener('click', () => {
-            overlay.classList.toggle('is-open')
+        span.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+            gsap.to(overlay, {
+                '--dot-size': '30px',
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+            element.addEventListener('mouseleave', () => {
+                gsap.to(overlay, {
+                    '--dot-size': '50px',
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        h1.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                gsap.to(overlay, {
+                    '--dot-size': '100px',
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            element.addEventListener('mouseleave', () => {
+                gsap.to(overlay, {
+                    '--dot-size': '50px',
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
         })
     </script>
 </body>

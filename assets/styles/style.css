@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+
+}
+
+html {
+    cursor: none;
 }
 
 body {
@@ -16,6 +21,7 @@ section {
     left: 0;
     width: 100%;
 
+    user-select: none;
     
     h1 {
         font-size: 5rem;
@@ -26,27 +32,23 @@ section {
     background: black;
     color: white;
 
-    clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
+    clip-path: circle(var(--dot-size, 50px) at var(--x, 10%) var(--y, 10%));
     transition: clip-path 70ms;
-}
-
-.is-open {
-    clip-path: circle(200% at 100% 100%);
-    transition: clip-path 1.3s;
-    transition-timing-function: cubir-bezier(1, -0.01, .01, .99);
 }
 
 span {
     width: fit-content;
-    padding: 10px;
+    padding: 30px;
     border-radius: 100px;
     background: black;
     display: flex;
     gap: 5px;
+    color: white;
 }
 
 .hover-btn2 {
-    background: white;;
+    background: white;
+    color: black;;
 }
 
 .hover-btn2 i {
