@@ -73,30 +73,3 @@ body {
 .hoveredCursor {
   transform: translate(-50%, -50%) scale(2);
 }
-
-
-.cube  {
-  width: 30em;
-  height: 50em;
-  background: red;
-  margin: auto;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.text-container {
-    position: relative;
-    font-size: 3em;
-    font-weight: bold;
-    color: #555; /* Color del texto original */
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-}
-
-.text-container span {
-    position: absolute; /* Para superponer ambos spans */
-    top: 0;
-    left: 0;
-}
