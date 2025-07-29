@@ -1,75 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
 * {
-    padding: 0;
-    margin: 0;
-}
-
- /*COLOR PALETTE*/
-:root {
-    /*Changing colors*/
-    --base-color: hsl(232deg, 23%, 18%);
-    --primary-color: hsl(from var(--base-color) h s calc(l + 10));
-    --secondary-color: hsl(from var(--base-color) h s calc(l + 20));
-    --base-darker: hsl(from var(--base-color) h s calc(l - 5));
-    --base-black: hsl(from var(--base-color) h s calc(l - 10));
-
-    --text-color: #4c4f69;
-    --secondary-text: #5c5f77;
-    
-    /*Stationary colors*/
-    --rosewater: #f4dbd6;
-    --flamingo: #f0c6c6;
-    --pink: #f5bde6;
-    --mauve: #c6a0f6;
-    --red: #ed8796;
-    --maroon: #ee99a0;
-    --peach: #f5a97f;
-    --yellow: #eed49f;
-    --green: #a6da95;
-    --teal: #8bd5ca;
-    --sky: #91d7e3;
-    --sapphire: #7dc4e4;
-    --blue: #8aadf4;
-    --lavender: #b7bdf8;
-}
-
-/*GENERAL CLASSES*/
-.darkmode {
-    --base-color: hsl(232deg, 23%, 18%);
-    --primary-color: hsl(from var(--base-color) h s calc(l + 10));
-    --secondary-color: hsl(from var(--base-color) h s calc(l + 20));
-    --base-darker: hsl(from var(--base-color) h s calc(l - 5));
-    --base-black: hsl(from var(--base-color) h s calc(l - 10));
-
-    --text-color: #cad3f5;
-    --secondary-text: #b8c0e0;
-}
-
-html {
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--base-color);
-    max-width: 90wv;
-    min-width: 50%;
-    font-family: 'JetBrains Mono', Arial, Helvetica, sans-serif;
+    height: 100vh;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
-.cursor {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out;
+section {
+    height: 100vh;
+    padding: 3em;
+    
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 100%;
+
+    
+    h1 {
+        font-size: 5rem;
+    }
 }
 
-.hoveredCursor {
-  transform: translate(-50%, -50%) scale(2);
+.overlay {
+    background: black;
+    color: white;
+
+    clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
+    transition: clip-path 70ms;
+}
+
+.is-open {
+    clip-path: circle(200% at 100% 100%);
+    transition: clip-path 1.3s;
+    transition-timing-function: cubir-bezier(1, -0.01, .01, .99);
+}
+
+span {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 100px;
+    background: black;
+    display: flex;
+    gap: 5px;
+}
+
+.hover-btn2 {
+    background: white;;
+}
+
+.hover-btn2 i {
+    color: black;
+}
+
+i {
+    color: white;
 }

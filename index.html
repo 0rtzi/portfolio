@@ -8,13 +8,46 @@
     <script src="https://kit.fontawesome.com/ed40f16fe7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="cursor"></div>
+    <section>
+        <h1>EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+        <span class="hover-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+        </span>
+    </section>
+    <section class="overlay">
+        <h1>EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+        <span class="hover-btn2">
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right"></i>
+        </span>
+    </section>
 
-    <div class="text-container">
-        <span class="original-text">Hola, quetal soy colosal</span>
-        <span class="masked-text">Hola, quetal soy Unai Dorado</span>
-    </div>
 
-    <script src="assets/scripts/cursor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        const span = document.querySelector('.hover-btn2');
+        const overlay = document.querySelector('.overlay');
+
+        window.addEventListener('mousemove', (e) => {
+            const x = Math.round((e.clientX / window.innerWidth) * 100);
+            const y = Math.round((e.clientY / window.innerHeight) * 100);
+
+            gsap.to(overlay, {
+                '--x': `${x}%`,
+                '--y': `${y}%`,
+                duration: 0.3,
+                ease: 'sine.out'
+            })
+        });
+
+        span.addEventListener('click', () => {
+            overlay.classList.toggle('is-open')
+        })
+    </script>
 </body>
 </html>
