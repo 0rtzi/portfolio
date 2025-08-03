@@ -1,26 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cursor = document.querySelector(".cursor");
+    const span = document.querySelectorAll('span');
+    const cursor = document.querySelector('.cursor');
+    const text = document.querySelectorAll('.text');
+    const defaultCursorSize = 75;
+    const smallCursorSize = 50;
+    const largeCursorSize = 150;
+    lucide.createIcons();
 
-    let mouseX = 0;
-    let mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+        const x = Math.round((e.clientX / window.innerWidth) * 100);
+        const y = Math.round((e.clientY / window.innerHeight) * 100);
 
-    document.addEventListener("mousemove", (e) => {
-
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-
-        cursor.style.left = `${mouseX}px`;
-        cursor.style.top = `${mouseY}px`;
+        gsap.to(cursor, {
+            '--x': `${x}%`,
+            '--y': `${y}%`,
+            duration: 2,
+            ease: 'elastic.out'
+        })
     });
 
-    const interactiveElements = document.querySelectorAll(".text-container");
-    interactiveElements.forEach(element => {
-        element.addEventListener("mouseenter", () => {
-            cursor.classList.add('hoveredCursor');
-        });
+    window.addEventListener('mouseout', () =>{
+        gsap.to(cursor, {
+            '--dot-size': `${0}px`,
+            duration: 0.3,
+            ease: 'power2.out'
+        })
+    })
 
-        element.addEventListener("mouseleave", () => {
-            cursor.classList.remove('hoveredCursor');
+    window.addEventListener('mouseover', () =>{
+        gsap.to(cursor, {
+            '--dot-size': `${defaultCursorSize}px`,
+
+            duration: 0.3,
+            ease: 'power2.out'
+        })
+    })
+
+    span.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+        gsap.to(cursor, {
+            '--dot-size': `${smallCursorSize}px`, 
+            duration: 0.3,
+            ease: 'power2.out'
         });
     });
+
+        element.addEventListener('mouseleave', () => {
+            gsap.to(cursor, {
+                '--dot-size': `${defaultCursorSize}px`,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+    text.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            gsap.to(cursor, {
+                '--dot-size': `${largeCursorSize}px`,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        element.addEventListener('mouseleave', () => {
+            gsap.to(cursor, {
+                '--dot-size': `${defaultCursorSize}px`,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    })
 });
