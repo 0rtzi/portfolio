@@ -3,10 +3,6 @@
 
 }
 
-html {
-    cursor: none;
-}
-
 body {
     height: 100vh;
     font-family: 'Bebas Neue', sans-serif;
@@ -15,10 +11,6 @@ body {
 section {
     height: 100vh;
     padding: 3em;
-    
-    position: absolute;
-    top : 0;
-    left: 0;
     width: 100%;
 
     user-select: none;
@@ -28,12 +20,17 @@ section {
     }
 }
 
-.overlay {
-    background: black;
-    color: white;
-
-    clip-path: circle(var(--dot-size, 50px) at var(--x, 10%) var(--y, 10%));
-    transition: clip-path 70ms;
+.cursor {
+    width: var(--dot-size, 50px);
+    height: var(--dot-size, 50px);
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    top: calc(var(--y, 10%) - var(--dot-size, 50px) / 2);
+    left: calc(var(--x, 10%) - var(--dot-size, 50px) / 2);
+    border-radius: 50%;
+    backdrop-filter: invert(100%);
+    -webkit-backdrop-filter: blur(8px) brightness(0.7);
 }
 
 span {
@@ -44,15 +41,6 @@ span {
     display: flex;
     gap: 5px;
     color: white;
-}
-
-.hover-btn2 {
-    background: white;
-    color: black;;
-}
-
-.hover-btn2 i {
-    color: black;
 }
 
 i {
