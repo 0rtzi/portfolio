@@ -23,7 +23,7 @@ section {
 .cursor {
     width: var(--dot-size, 50px);
     height: var(--dot-size, 50px);
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     pointer-events: none;
     top: calc(var(--y, 10%) - var(--dot-size, 50px) / 2);
