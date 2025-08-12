@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-
+    /* cursor: none; */
 }
 
 body {
@@ -21,13 +21,13 @@ section {
 }
 
 .cursor {
-    width: var(--dot-size, 50px);
-    height: var(--dot-size, 50px);
+    width: var(--dot-size, 75px);
+    height: var(--dot-size, 75px);
     position: absolute;
     z-index: 1000;
     pointer-events: none;
-    top: calc(var(--y, 10%) - var(--dot-size, 50px) / 2);
-    left: calc(var(--x, 10%) - var(--dot-size, 50px) / 2);
+    top: calc(var(--y, 10%) - var(--dot-size, 50px) / 3);
+    left: calc(var(--x, 10%) - var(--dot-size, 50px) / 3);
     border-radius: 50%;
     backdrop-filter: invert(100%);
     -webkit-backdrop-filter: blur(8px) brightness(0.7);
