@@ -9,15 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
     window.addEventListener('mousemove', (e) => {
-        const x = Math.round((e.clientX / window.innerWidth) * 100);
-        const y = Math.round((e.clientY / window.innerHeight) * 100);
+        updateCursorPosition(e);
+        
+    });
 
-        gsap.to(cursor, {
-            '--x': `${x}%`,
-            '--y': `${y}%`,
-            duration: 2,
-            ease: 'elastic.out'
-        })
+    window.addEventListener('scroll', (e) => {
+        updateCursorPosition(e);
     });
 
     body.addEventListener('mouseenter', () => {
@@ -71,4 +68,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     })
+
+    function updateCursorPosition(e) {
+        const x = Math.round(e.clientX / window.innerWidth * 100);
+        const y = Math.round((e.clientY + window.scrollY) / window.innerHeight * 100);
+
+        gsap.to(cursor, {
+            '--x': `${x}%`,
+            '--y': `${y}%`,
+            duration: 2,
+            ease: 'elastic.out'
+        })
+    }
 });
