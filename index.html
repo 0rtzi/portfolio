@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unai Dorado</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/styles.css">
     <script src="https://kit.fontawesome.com/ed40f16fe7.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div class="cursor"></div>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <nav class="hoverableItem">
+            <a href="#">home</a>
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
         </nav>
     </header>
     <section id="about">
@@ -32,12 +30,17 @@
         
     </section>
 
+    <section id="contact">
+        
+    </section>
+
     <section>
-        <div class="text">
+        <div class="hoverableText" style="width: fit-content; padding: 20px;">
             <h1>KAIXO AMA</h1>
+            <h2>Toma geroma patitos de goma</h2>
         </div>
         
-        <span class="hover-btn">
+        <span class="hoverableItem">
             <i data-lucide="arrow-right"></i>
             <i data-lucide="arrow-right"></i>
             <i data-lucide="arrow-right"></i>
