@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wdth,wght@75..125,200..700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');@import url('https://fonts.googleapis.com/css2&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Mozilla+Headline:wdth,wght@75..125,200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+}
+
+:root {
+    --dot-size: 75px;
+
+    /*COLORS*/
+    --background-color: antiquewhite;
+    --inverted-background-color: rgb(from var(--background-color) calc(255 - r) calc(255 - g) calc(255 - b));
+    --text-color: var(--inverted-background-color);
+}
+
+.darkMode {
+    --background-color: rgb(5, 20, 40);
+    --inverted-background-color: rgb(from var(--background-color) calc(255 - r) calc(255 - g) calc(255 - b));
+    --text-color: var(--inverted-background-color);
+}
+
+/*CURSOR*/
+.cursor {
+    width: var(--dot-size);
+    height: var(--dot-size);
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    backdrop-filter: invert(100%);
+    -webkit-backdrop-filter: invert(100%);
+    /* -webkit-backdrop-filter: blur(8px) brightness(0.7); */
+}
+
+/*MAIN SECTIONS*/
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: var(--background-color);
+}
+
+/*HEADER*/
+header {
+    user-select: none;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    position: sticky;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav a {
+    padding: 30px 70px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Old Standard TT', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: var(--background-color);
+    background: var(--inverted-background-color);
+}
+
+/*SECTIONS*/
+
+section {
+    padding: 3em;
+    width: 100%;
+    user-select: none;
+    h1 {
+        font-size: 5rem;
+        color: var(--text-color);
+        font-family: 'Mozilla Headline', sans-serif;
+        font-weight: 700;
+    }
+}
+
+span {
+    width: fit-content;
+    padding: 30px;
+    border-radius: 100px;
+    background: var(--inverted-background-color);
+    display: flex;
+    gap: 5px;
+    color: white;
+    margin-top: 20px;
+}
+
+i {
+    color: white;
+}
