@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(cursor, {
             x: x,
             y: y,
-            duration: 0.3,
+            duration: 0.1,
             ease: 'power1.out'
         });
     });
