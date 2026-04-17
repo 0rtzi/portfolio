@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/styles/input.css -o ./assets/styles/styles.css --minify",
+    "watch:css": "tailwindcss -i ./assets/styles/input.css -o ./assets/styles/styles.css --watch",
+    "build": "npm run build:css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.32"
+  }
+}

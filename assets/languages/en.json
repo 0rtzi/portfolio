@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Unai",
+    "title2": "Dorado",
+    "subtitle": "Multiplatform App Developer",
+    "description": "Computer Science student at UPV/EHU. Crafting digital experiences with precision and passion.",
+    "btn_projects": "View Projects",
+    "btn_contact": "Contact Me"
+  },
+  "about": {
+    "title": "The",
+    "title2": "Architect",
+    "subtitle": "About Me",
+    "description": "I build robust, multiplatform applications that bridge the gap between elegant design and complex engineering. Currently navigating my degree in Computer Engineering at UPV, I treat every line of code as an architectural decision.",
+    "years": "Years Exp",
+    "projects_count": "Projects",
+    "platform": "Platform"
+  },
+  "journey": {
+    "title": "The",
+    "title2": "Journey",
+    "subtitle": "Experience & Education",
+    "studies1": "Studies",
+    "studies1_title": "Sistemas Microinformáticos y Redes",
+    "work": "Work Experience",
+    "work_title": "SICOS Lab - Apple Premium Reseller",
+    "studies2": "Studies",
+    "studies2_title": "Desarrollo de Aplicaciones Multiplataforma",
+    "current": "Current",
+    "currentstudies_title": "UPV/EHU",
+    "currentstudies_desc": "Computer Science Studies"
+  },
+  "projects": {
+    "title": "Selected",
+    "title2": "Work",
+    "subtitle": "Projects",
+    "project1_title": "Example1",
+    "project1_desc": "This is a short description of the project Example1",
+    "project2_title": "Example2",
+    "project2_desc": "This is a short description of the project Example2",
+    "btn_explore": "Explore All Projects"
+  },
+  "contact": {
+    "subtitle": "Let's Connect",
+    "title": "Ready to build something extraordinary?",
+    "description": "Currently open for select freelance opportunities and collaborations.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "twitter": "Twitter",
+    "copied": "Copied!"
+  }
+}
