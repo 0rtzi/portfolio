@@ -1,58 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unai Dorado</title>
-    <link rel="stylesheet" href="assets/styles/styles.css">
-    <script src="https://kit.fontawesome.com/ed40f16fe7.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unai Dorado</title>
+<link rel="stylesheet" href="./assets/styles/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 </head>
-<body>
-    <div class="cursor"></div>
-    <header>
-        <nav class="hoverableItem">
-            <a href="#top">home</a>
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="#contact">contact</a>
-        </nav>
-    </header>
-    <section id="home">
-        <div class="hoverableText">
-            <h1>Kaixo! Nire izena <br> Unai Dorado da</h1>
-            <h2>Programatzailea eta diseinu entusiasta</h2>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl">
+        <div class="flex justify-center items-center px-8 py-6 w-full gap-8">
+            <div class="text-xl font-black tracking-tighter text-slate-100 absolute left-8">Unai Dorado</div>
+            <!-- Desktop Menu - Centered -->
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-manrope tracking-tighter uppercase text-xs font-bold text-slate-400 scale-105 cursor-none hover:text-teal-300 px-3 py-2 transition-all duration-300" href="#about" data-i18n="nav.about">About</a>
+                <a class="font-manrope tracking-tighter uppercase text-xs font-bold text-slate-400 scale-105 cursor-none hover:text-teal-300 px-3 py-2 transition-all duration-300" href="#projects" data-i18n="nav.projects">Projects</a>
+                <a class="font-manrope tracking-tighter uppercase text-xs font-bold text-slate-400 scale-105 cursor-none hover:text-teal-300 px-3 py-2 transition-all duration-300" href="#contact" data-i18n="nav.contact">Contact</a>
+            </div>
+            <!-- Desktop Language Selector - Right -->
+            <div class="hidden md:block absolute right-8">
+                <div class="relative group">
+                    <button class="text-xs font-bold tracking-widest text-secondary hover:text-primary transition-colors cursor-none flex items-center gap-1" id="lang-btn">
+                        <span class="material-symbols-outlined">language</span>
+                        EN
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </button>
+                    <div class="hidden absolute right-0 mt-4 w-40 bg-surface-container-highest border border-outline-variant/30 rounded-md overflow-hidden shadow-2xl z-[60]" id="lang-dropdown">
+                        <a class="block px-4 py-3 text-xs font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#">English</a>
+                        <a class="block px-4 py-3 text-xs font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#">Euskara</a>
+                        <a class="block px-4 py-3 text-xs font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#">Castellano</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden absolute right-8 flex items-center cursor-none" id="mobile-menu-btn">
+                <span class="material-symbols-outlined text-2xl text-secondary">menu</span>
+            </button>
         </div>
-        <span id="downwardsArrow" class="hoverableItem">
-
-        </span>
-    </section>
-
-    <section id="projects">
-        <div class="hoverableText" style="width: fit-content; padding: 20px;">
-            <h1>Proiektuak</h1>
-            <h2>Hemen egindako proiektuak erakutsiko dira</h2>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden absolute top-20 right-0 w-48 bg-surface-container-highest border border-outline-variant/30 rounded-md overflow-hidden shadow-2xl z-50 mx-4 transition-all duration-300" id="mobile-menu">
+            <a class="block px-4 py-3 text-sm font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#about" data-i18n="nav.about">About</a>
+            <a class="block px-4 py-3 text-sm font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#projects" data-i18n="nav.projects">Projects</a>
+            <a class="block px-4 py-3 text-sm font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#contact" data-i18n="nav.contact">Contact</a>
+            <button class="w-full text-left px-4 py-3 text-sm font-bold text-secondary transition-colors cursor-none flex items-center gap-2" id="mobile-lang-btn">
+                <span class="material-symbols-outlined text-lg text-secondary">language</span>
+                <span id="mobile-lang-display">EN</span>
+            </button>
+            <div class="hidden bg-surface-container-high transition-all duration-300" id="mobile-lang-dropdown">
+                <a class="block px-4 py-3 text-xs font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#">English</a>
+                <a class="block px-4 py-3 text-xs font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#">Euskara</a>
+                <a class="block px-4 py-3 text-xs font-bold text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-none" href="#">Castellano</a>
+            </div>
         </div>
-        
-        <span class="hoverableItem">
-            <i data-lucide="arrow-right"></i>
-            <i data-lucide="arrow-right"></i>
-            <i data-lucide="arrow-right"></i>
-            <i data-lucide="arrow-right"></i>
-        </span>
-    </section>
-
-    <section id="about">
-        
-    </section>
-
-    <section id="contact">
-        
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script src="assets/scripts/cursor.js"></script>
-    <script src="assets/scripts/navigation.js"></script>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow pt-32 pb-24 px-8 max-w-screen-2xl mx-auto w-full flex flex-col gap-32">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[716px] flex flex-col lg:flex-row items-center justify-between gap-16 relative">
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary opacity-5 blur-[100px] rounded-full z-0"></div>
+            <div class="w-full lg:w-1/2 flex flex-col gap-8 z-10 px-4 lg:pl-12 lg:text-left">
+                <div class="flex flex-col gap-2">
+                    <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-4 block" data-i18n="hero.subtitle">Multiplatform App Developer</span>
+                    <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none -ml-1 text-on-surface"><span data-i18n="hero.title1">Unai</span><br/><span class="text-primary" data-i18n="hero.title2">Dorado</span></h1>
+                </div>
+                <p class="text-base md:text-xl text-on-surface-variant font-light max-w-lg leading-relaxed" data-i18n="hero.description">
+                    Computer Engineering student at UPV. Crafting digital experiences with precision and passion.
+                </p>
+                <div class="flex gap-2 md:gap-4 mt-4 flex-wrap">
+                    <button id="btn-view-projects" class="bg-primary text-on-primary rounded-full px-4 md:px-8 py-2 md:py-4 text-xs md:text-sm font-bold tracking-wide hover:scale-105 transition-transform duration-300 shadow-[0_0_32px_rgba(163,166,255,0.2)]"><span class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base md:text-xl">visibility</span> <span data-i18n="hero.btn_projects">View Projects</span></span></button>
+                    <button id="btn-contact-me" class="border border-outline-variant/30 text-on-surface rounded-full px-4 md:px-8 py-2 md:py-4 text-xs md:text-sm font-bold tracking-wide hover:border-secondary hover:text-secondary transition-colors duration-300 bg-surface-container-low/50"><span class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-base md:text-xl">mail</span> <span data-i18n="hero.btn_contact">Contact Me</span></span></button>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end z-10 px-4 lg:pr-12 relative" style="perspective: 1000px;">
+                <div id="profile-card" class="w-72 h-72 md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative bg-surface-container" style="transform-style: preserve-3d; transition: transform 0.1s ease-out;">
+                    <img alt="Unai Dorado Portrait" class="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-700" src="./assets/images/profile.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-tr from-background/80 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="bg-surface-container-low rounded-[3rem] p-12 lg:p-24 flex flex-col gap-12 relative overflow-hidden">
+            <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-secondary opacity-5 blur-[100px] rounded-full z-0"></div>
+            <div class="z-10 flex flex-col lg:flex-row gap-16 items-start">
+                <div class="w-full lg:w-1/3">
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-on-surface mb-2"><span data-i18n="about.title">The</span><br/><span data-i18n="about.title2">Architect</span></h2>
+                    <span class="text-secondary font-bold text-sm tracking-widest uppercase" data-i18n="about.subtitle">About Me</span>
+                </div>
+                <div class="w-full lg:w-2/3 flex flex-col gap-8 text-lg text-on-surface-variant font-light leading-relaxed">
+                    <p data-i18n="about.description">I build robust, multiplatform applications that bridge the gap between elegant design and complex engineering. Currently navigating my degree in Computer Engineering at UPV, I treat every line of code as an architectural decision.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+                        <div>
+                            <div class="text-4xl font-black text-primary mb-2">03+</div>
+                            <div class="text-sm font-bold tracking-wider uppercase text-on-surface" data-i18n="about.years">Years Exp</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-black text-primary mb-2">15+</div>
+                            <div class="text-sm font-bold tracking-wider uppercase text-on-surface" data-i18n="about.projects_count">Projects</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-black text-primary mb-2">Multi</div>
+                            <div class="text-sm font-bold tracking-wider uppercase text-on-surface" data-i18n="about.platform">Platform</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Timeline Section -->
+        <section class="flex flex-col gap-16">
+            <div class="pl-4 lg:pl-12 mb-4">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-on-surface mb-2"><span data-i18n="journey.title">The</span><br/><span data-i18n="journey.title2">Journey</span></h2>
+                <span class="text-secondary font-bold text-sm tracking-widest uppercase" data-i18n="journey.subtitle">Experience &amp; Education</span>
+            </div>
+            <div class="relative ml-8 lg:ml-16 border-l-2 border-outline-variant/30 flex flex-col gap-12 py-4">
+                <!-- Milestone 1 -->
+                <div class="relative pl-8 group cursor-none">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-surface-container border-4 border-outline-variant/50 group-hover:border-primary transition-colors duration-300"></div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-secondary font-bold text-xs tracking-widest uppercase" data-i18n="journey.studies1">Studies</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-on-surface group-hover:text-primary transition-colors" data-i18n="journey.studies1_title">Sistemas Microinformáticos y Redes</h3>
+                    </div>
+                </div>
+                <!-- Milestone 2 -->
+                <div class="relative pl-8 group cursor-none">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-surface-container border-4 border-outline-variant/50 group-hover:border-primary transition-colors duration-300"></div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-secondary font-bold text-xs tracking-widest uppercase" data-i18n="journey.work">Work Experience</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-on-surface group-hover:text-primary transition-colors" data-i18n="journey.work_title">Apple</h3>
+                    </div>
+                </div>
+                <!-- Milestone 3 -->
+                <div class="relative pl-8 group cursor-none">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-surface-container border-4 border-outline-variant/50 group-hover:border-primary transition-colors duration-300"></div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-secondary font-bold text-xs tracking-widest uppercase" data-i18n="journey.studies2">Studies</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-on-surface group-hover:text-primary transition-colors" data-i18n="journey.studies2_title">Desarrollo de Aplicaciones Multiplataforma</h3>
+                    </div>
+                </div>
+                <!-- Milestone 4 -->
+                <div class="relative pl-8 group cursor-none">
+                    <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(163,166,255,0.5)]"></div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-secondary font-bold text-xs tracking-widest uppercase" data-i18n="journey.current">Current</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-on-surface" data-i18n="journey.currentstudies_title">UPV/EHU</h3>
+                        <p class="text-on-surface-variant font-light text-sm mt-1" data-i18n="journey.currentstudies_desc">Computer Engineering Studies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Selected Work (Projects) -->
+        <section id="projects" class="flex flex-col gap-16">
+            <div class="flex justify-between items-end mb-8">
+                <div class="pl-4 lg:pl-12">
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-on-surface mb-2"><span data-i18n="projects.title">Selected</span><br/><span data-i18n="projects.title2">Work</span></h2>
+                    <span class="text-secondary font-bold text-sm tracking-widest uppercase" data-i18n="projects.subtitle">Projects</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Project 1 -->
+                <div class="group flex flex-col gap-6 cursor-none">
+                    <div class="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-surface-container relative">
+                        <img alt="Project 1" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="./assets/images/theSwing.jpg"/>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors" data-i18n="projects.project1_title">Nova Analytics Platform</h3>
+                        <p class="text-on-surface-variant font-light mb-4" data-i18n="projects.project1_desc">A high-performance data visualization tool for enterprise clients.</p>
+                        <div class="flex gap-3 text-xs font-bold uppercase tracking-wider text-secondary">
+                            <span>React native</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group flex flex-col gap-6 cursor-none">
+                    <div class="w-full aspect-[4/3] rounded-[2rem] overflow-hidden bg-surface-container relative">
+                        <img alt="Project 2" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="./assets/images/theSwing.jpg"/>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-on-surface mb-2 group-hover:text-primary transition-colors" data-i18n="projects.project2_title">Aura AI Companion</h3>
+                        <p class="text-on-surface-variant font-light mb-4" data-i18n="projects.project2_desc">Cross-platform intelligent assistant with offline capabilities.</p>
+                        <div class="flex gap-3 text-xs font-bold uppercase tracking-wider text-secondary">
+                            <span>Flutter</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-24 w-full">
+                <button class="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-on-primary rounded-full px-16 py-6 font-bold tracking-widest uppercase text-lg transition-all duration-300 flex items-center gap-4 group shadow-[0_0_20px_rgba(163,166,255,0.1)] hover:shadow-[0_0_50px_rgba(163,166,255,0.4)] cursor-none">
+                        <span data-i18n="projects.btn_explore">Explore All Projects</span>
+                        <span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+        </section>
+        <!-- Prominent Contact Section -->
+        <section id="contact" class="bg-surface-container rounded-[3rem] p-12 lg:p-24 flex flex-col items-center justify-center text-center gap-12 relative overflow-hidden border border-outline-variant/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5"></div>
+            <div class="z-10 flex flex-col gap-6 items-center max-w-2xl">
+                <span class="text-secondary font-bold text-sm tracking-widest uppercase" data-i18n="contact.subtitle">Let's Connect</span>
+                <h2 class="text-3xl md:text-5xl lg:text-7xl font-black tracking-tighter text-on-surface" data-i18n="contact.title">Ready to build something extraordinary?</h2>
+                <p class="text-lg md:text-xl text-on-surface-variant font-light mb-6 md:mb-8" data-i18n="contact.description">Currently open for select freelance opportunities and collaborations.</p>
+                <div class="flex flex-col items-center gap-2 relative">
+                    <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                        <a class="text-xl md:text-4xl font-bold text-primary hover:text-secondary transition-colors underline decoration-2 underline-offset-4 md:underline-offset-8 decoration-primary/30 hover:decoration-secondary" href="mailto:udorburu@gmail.com" id="email-link">udorburu@gmail.com</a>
+                        <button class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-all cursor-none flex-shrink-0" id="copy-email">
+                            <span class="material-symbols-outlined text-xl md:text-2xl">content_copy</span>
+                        </button>
+                    </div>
+                    <span class="absolute -top-12 md:-top-10 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full opacity-0 transition-opacity pointer-events-none" id="copy-feedback" data-i18n="contact.copied">Copied!</span>
+                </div>
+                <div class="flex gap-4 md:gap-8 mt-8 md:mt-12 flex-wrap justify-center">
+                    <a class="flex flex-col items-center gap-2 md:gap-4 group cursor-none" href="https://www.linkedin.com/in/unaidorado" target="_blank">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-on-surface group-hover:text-on-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.047-8.733 0-9.633h3.554v1.364c.429-.659 1.196-1.599 2.905-1.599 2.121 0 3.71 1.386 3.71 4.365v5.503zM5.337 9.433c-1.144 0-1.915-.759-1.915-1.71 0-.955.771-1.71 1.958-1.71 1.187 0 1.919.755 1.942 1.71 0 .951-.771 1.71-1.985 1.71zm1.582 11.019H3.754V9.821h3.165v10.631zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                        </div>
+                        <span class="text-xs md:text-sm font-bold tracking-wider uppercase text-on-surface-variant group-hover:text-primary transition-colors" data-i18n="contact.linkedin">LinkedIn</span>
+                    </a>
+                    <a class="flex flex-col items-center gap-2 md:gap-4 group cursor-none" href="https://github.com/0rtzi" target="_blank">
+                        <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                            <svg class="w-6 h-6 md:w-8 md:h-8 text-on-surface group-hover:text-on-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </div>
+                        <span class="text-xs md:text-sm font-bold tracking-wider uppercase text-on-surface-variant group-hover:text-primary transition-colors" data-i18n="contact.github">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Custom Cursor -->
+    <div class="cursor-custom" id="custom-cursor"></div>
+    <script src="./assets/scripts/cursor.js"></script>
+    <script src="./assets/scripts/i18n.js"></script>
+    <script src="./assets/scripts/email.js"></script>
+    <script src="./assets/scripts/navigation.js"></script>
+    <script src="./assets/scripts/profileCard3D.js"></script>
+    <script src="./assets/scripts/mobile-menu.js"></script>
 </body>
 </html>

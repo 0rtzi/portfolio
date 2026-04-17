@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "about": "Niri Buruz",
+    "projects": "Proiektuak",
+    "contact": "Kontaktua"
+  },
+  "hero": {
+    "title1": "Unai",
+    "title2": "Dorado",
+    "subtitle": "Plataforma Anitzeko Aplikazioen Garatzailea",
+    "description": "Informatika Ingeniaritzako ikaslea UPV/EHU-n. Esperientzia digital bikainak sortzen zehaztasun eta pasioaz.",
+    "btn_projects": "Proiektuak Ikusi",
+    "btn_contact": "Kontaktatu"
+  },
+  "about": {
+    "title": "Ingurumenen",
+    "title2": "Arkitektoa",
+    "subtitle": "Niri Buruz",
+    "description": "Aplikazio sendo eta plataforma anitzekoak sortzen ditut diseinua eta ingeniaritza konplexuaren artean zubi bat egiteko. Gaur egun Informatika Ingeniaritzaren gradura nabigatzean, kode-lerro bakoitza arkitektura-erabakia bezala tratatu.",
+    "years": "Urteak Exp",
+    "projects_count": "Proiektuak",
+    "platform": "Plataforma Anitza"
+  },
+  "journey": {
+    "title": "Egindako",
+    "title2": "Bidea",
+    "subtitle": "Esperientzia eta Hezkuntza",
+    "studies1": "Ikasketa",
+    "studies1_title": "Sistema Mikroinformatikoak eta Sareak",
+    "work": "Lan Esperientzia",
+    "work_title": "SICOS Lab - Apple Premium Reseller",
+    "studies2": "Ikasketa",
+    "studies2_title": "Plataforma Anitzeko Aplikazioen Garapena",
+    "current": "Unekoa",
+    "currentstudies_title": "UPV/EHU",
+    "currentstudies_desc": "Informatika Ingeniaritzaren Ikasketa"
+  },
+  "projects": {
+    "title": "Aukeratutako",
+    "title2": "Lanak",
+    "subtitle": "Proiektuak",
+    "project1_title": "1.Eredua",
+    "project1_desc": "Hau, 1.Eredua proiektuaren deskripzio laburra da",
+    "project2_title": "2.Eredua",
+    "project2_desc": "Hau, 2.Eredua proiektuaren deskripzio laburra da",
+    "btn_explore": "Proiektu Guztiak Ikusi"
+  },
+  "contact": {
+    "subtitle": "Konektatu dezagun",
+    "title": "Etorkizuna eraikitzeko prest?",
+    "description": "Gaur egun freelance aukera hautatuetara eta kolaborazioetara irekita.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "twitter": "Twitter",
+    "copied": "Kopiatuta!"
+  }
+}

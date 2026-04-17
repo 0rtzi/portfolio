@@ -1,0 +1,64 @@
+body { 
+        font-family: 'Manrope', 
+        sans-serif; 
+        cursor: none; 
+    }
+/* Mostrar cursor por defecto en dispositivos móviles */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        cursor: auto;
+    }
+    #custom-cursor {
+        display: none !important;
+    }
+}
+@keyframes rotate-shadow {
+    0% {
+        box-shadow: -4px -4px 10px rgba(163, 166, 255, 0.9), 4px 4px 10px rgba(109, 245, 225, 1);
+    }
+    25% {
+        box-shadow: 4px -4px 10px rgba(163, 166, 255, 0.9), -4px 4px 10px rgba(109, 245, 225, 1);
+    }
+    50% {
+        box-shadow: 4px 4px 10px rgba(163, 166, 255, 0.9), -4px -4px 10px rgba(109, 245, 225, 1);
+    }
+    75% {
+        box-shadow: -4px 4px 10px rgba(163, 166, 255, 0.9), 4px -4px 10px rgba(109, 245, 225, 1);
+    }
+    100% {
+        box-shadow: -4px -4px 10px rgba(163, 166, 255, 0.9), 4px 4px 10px rgba(109, 245, 225, 1);
+    }
+}
+
+.cursor-custom {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 5rem; 
+    height: 5rem;
+    background-color: rgba(15, 25, 48, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1), height 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(1px);
+    animation: rotate-shadow 4s linear infinite;
+}
+.cursor-shrink {
+    width: 2rem !important;
+    height: 2rem !important;
+}
+.cursor-hidden {
+    width: 0.25rem !important;
+    height: 0.25rem !important;
+    opacity: 0 !important;
+}
+a, button, [role="button"] {
+    cursor: none !important;
+}
+.nav-link-active {
+    font-size: 0.875rem !important;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}

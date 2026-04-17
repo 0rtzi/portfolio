@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title1": "Unai",
+    "title2": "Dorado",
+    "subtitle": "Desarrollador de Aplicaciones Multiplataforma",
+    "description": "Estudiante de Ingeniería Informática en UPV. Creando experiencias digitales con precisión y pasión.",
+    "btn_projects": "Ver Proyectos",
+    "btn_contact": "Contactarme"
+  },
+  "about": {
+    "title": "El",
+    "title2": "Arquitecto",
+    "subtitle": "Acerca de Mí",
+    "description": "Construcción aplicaciones robustas y multiplataforma que cierren la brecha entre el diseño elegante y la ingeniería compleja. Actualmente navegando mi grado en Ingeniería Informática en UPV, trato cada línea de código como una decisión arquitectónica.",
+    "years": "Años Exp",
+    "projects_count": "Proyectos",
+    "platform": "Multiplataforma"
+  },
+  "journey": {
+    "title": "El",
+    "title2": "Viaje",
+    "subtitle": "Experiencia y Educación",
+    "studies1": "Estudios",
+    "studies1_title": "Sistemas Microinformáticos y Redes",
+    "work": "Experiencia Laboral",
+    "work_title": "SICOS Lab - Apple Premium Reseller",
+    "studies2": "Estudios",
+    "studies2_title": "Desarrollo de Aplicaciones Multiplataforma",
+    "current": "Actual",
+    "currentstudies_title": "UPV/EHU",
+    "currentstudies_desc": "Estudios de Ingeniería Informática"
+  },
+  "projects": {
+    "title": "Trabajos",
+    "title2": "Seleccionados",
+    "subtitle": "Proyectos",
+    "project1_title": "Ejemplo1",
+    "project1_desc": "Esto es la descripción del proyecto Ejemplo1",
+    "project2_title": "Ejemplo2",
+    "project2_desc": "Esto es la descripción del proyecto Ejemplo2",
+    "btn_explore": "Explorar Todos los Proyectos"
+  },
+  "contact": {
+    "subtitle": "Conectemos",
+    "title": "¿Listo para construir algo extraordinario?",
+    "description": "Actualmente abierto a oportunidades de freelance selectas y colaboraciones.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "twitter": "Twitter",
+    "copied": "¡Copiado!"
+  }
+}
