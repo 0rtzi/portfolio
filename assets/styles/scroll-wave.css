@@ -1,0 +1,17 @@
+/* Scroll Wave Animation */
+#scroll-wave-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 100vh;
+    z-index: 40;
+    pointer-events: none;
+    overflow: visible;
+}
+
+#wave-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
