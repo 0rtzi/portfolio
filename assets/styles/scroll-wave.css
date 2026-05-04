@@ -15,3 +15,10 @@
     height: 100%;
     display: block;
 }
+
+/* Hide on mobile devices */
+@media (max-width: 768px) {
+    #scroll-wave-container {
+        display: none;
+    }
+}

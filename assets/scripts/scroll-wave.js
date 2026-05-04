@@ -1,10 +1,20 @@
 // Scroll Wave Animation Script
-const waveContainer = document.getElementById('scroll-wave-container');
-const waveCanvas = document.getElementById('wave-canvas');
+// Check if device is mobile
+const isMobile = () => {
+    return window.innerWidth <= 768 || 
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+};
 
-if (!waveCanvas) {
-    console.error('Wave canvas not found');
+// Only initialize animation on desktop
+if (isMobile()) {
+    console.log('Scroll wave animation disabled on mobile');
 } else {
+    const waveContainer = document.getElementById('scroll-wave-container');
+    const waveCanvas = document.getElementById('wave-canvas');
+
+    if (!waveCanvas) {
+        console.error('Wave canvas not found');
+    } else {
     const ctx = waveCanvas.getContext('2d');
     
     // Canvas dimensions (will be updated on resize)
@@ -142,4 +152,5 @@ if (!waveCanvas) {
     window.addEventListener('resize', () => {
         updateCanvasDimensions();
     }, { passive: true });
+    }
 }
