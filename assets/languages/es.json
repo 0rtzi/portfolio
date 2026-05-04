@@ -17,9 +17,9 @@
     "title2": "Arquitecto",
     "subtitle": "Acerca de Mí",
     "description": "Construcción aplicaciones robustas y multiplataforma que cierren la brecha entre el diseño elegante y la ingeniería compleja. Actualmente navegando mi grado en Ingeniería Informática en UPV, trato cada línea de código como una decisión arquitectónica.",
-    "years": "Años Exp",
-    "projects_count": "Proyectos",
-    "platform": "Multiplataforma"
+    "item1": "Años Exp",
+    "item2": "Stack",
+    "item3": "Resolutivo"
   },
   "journey": {
     "title": "El",
