@@ -24,10 +24,15 @@ function detectBrowserLanguage() {
 // Cargar traducciones para todos los idiomas
 async function loadTranslations() {
     try {
-        for (const lang of languages) {
-            const response = await fetch(`./assets/languages/${lang}.json`);
-            translations[lang] = await response.json();
-        }
+        const promises = languages.map(lang => 
+            fetch(`./assets/languages/${lang}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    translations[lang] = data;
+                })
+        );
+        
+        await Promise.all(promises);
         applyLanguage(currentLanguage);
         updateLanguageButton();
     } catch (error) {
