@@ -17,9 +17,9 @@
     "title2": "Architect",
     "subtitle": "About Me",
     "description": "I build robust, multiplatform applications that bridge the gap between elegant design and complex engineering. Currently navigating my degree in Computer Engineering at UPV, I treat every line of code as an architectural decision.",
-    "years": "Years Exp",
-    "projects_count": "Projects",
-    "platform": "Platform"
+    "item1": "Years Exp",
+    "item2": "Stack",
+    "item3": "Resourceful"
   },
   "journey": {
     "title": "The",
